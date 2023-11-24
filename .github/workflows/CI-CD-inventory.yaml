@@ -1,0 +1,60 @@
+name: CI/CD Inventory Service
+on:
+  push:
+    branches: [ master ]
+    paths:
+      - "inventory/**"
+      - ".github/workflows/CI-CD-inventory.yaml"
+  pull_request:
+    branches: [ master ]
+    paths:
+      - "inventory/**"
+      - ".github/workflows/CI-CD-inventory.yaml"
+
+jobs:
+  ci-inventory:
+      strategy:
+        fail-fast: false
+        matrix:
+          python-version: ["3.12"]
+          poetry-version: ["1.7.0"]
+          os: [ubuntu-latest, macos-latest]
+
+      runs-on: ${{ matrix.os }}
+
+      steps:
+        - uses: actions/checkout@v4
+
+        - name: Set up Python ${{ matrix.python-version }}
+          uses: actions/setup-python@v4
+          with:
+            python-version: ${{ matrix.python-version }}
+
+        - name: Install poetry
+          run: |
+            echo "**************** Install main packages **************** "
+            pwd
+            ls -la
+            cd inventory
+            python -m pip install poetry==${{ matrix.poetry-version }}
+
+        - name: Install dependencies
+          run: |
+            echo "**************** Install dependencies **************** "
+            cd inventory
+            poetry install
+
+        - name: Run linters
+          run: |
+            echo "**************** Run linters **************** "
+            cd inventory
+            echo "**************** Run Ruff **************** "
+            poetry run ruff .
+            echo "**************** Run Black **************** "
+            poetry run black .
+
+        - name: Run tests
+          run: |
+            echo "**************** Run tests **************** "
+            cd inventory
+            poetry run pytest tests
