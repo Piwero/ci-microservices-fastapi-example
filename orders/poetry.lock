@@ -229,13 +229,13 @@ license = ["ukkonen"]
 
 [[package]]
 name = "idna"
-version = "3.5"
+version = "3.6"
 description = "Internationalized Domain Names in Applications (IDNA)"
 optional = false
 python-versions = ">=3.5"
 files = [
-    {file = "idna-3.5-py3-none-any.whl", hash = "sha256:79b8f0ac92d2351be5f6122356c9a592c96d81c9a79e4b488bf2a6a15f88057a"},
-    {file = "idna-3.5.tar.gz", hash = "sha256:27009fe2735bf8723353582d48575b23c533cc2c2de7b5a68908d91b5eb18d08"},
+    {file = "idna-3.6-py3-none-any.whl", hash = "sha256:c05567e9c24a6b9faaa835c4821bad0590fbb9d5779e7caa6e1cc4978e7eb24f"},
+    {file = "idna-3.6.tar.gz", hash = "sha256:9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"},
 ]
 
 [[package]]
@@ -248,6 +248,24 @@ files = [
     {file = "iniconfig-2.0.0-py3-none-any.whl", hash = "sha256:b6a85871a79d2e3b22d2d1b94ac2824226a63c6b741c88f7ae975f18b6778374"},
     {file = "iniconfig-2.0.0.tar.gz", hash = "sha256:2d91e135bf72d31a410b17c16da610a82cb55f6b0477d1a902134b24a455b8b3"},
 ]
+
+[[package]]
+name = "inventory"
+version = "0.1.0"
+description = ""
+optional = false
+python-versions = ">=3.12,<3.13"
+files = [
+    {file = "inventory-0.1.0.tar.gz", hash = "sha256:4cbe09c583ffefe50ecb453ebd13cc8486b54da2877398de545d9ecc326fc155"},
+]
+
+[package.dependencies]
+fastapi = "0.104.1"
+uvicorn = {version = "0.24.0.post1", extras = ["standard"]}
+
+[package.source]
+type = "file"
+url = "../inventory/dist/inventory-0.1.0.tar.gz"
 
 [[package]]
 name = "mypy"
@@ -960,4 +978,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "3.12"
-content-hash = "288226dcf5b62c158018c11d32206396a4574cabec9921c25e5357ba85ca2886"
+content-hash = "7732242c1d26cd2af430d1bcb6862c99b861637dabab790f0d3e6d8413e322a1"

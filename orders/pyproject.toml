@@ -8,7 +8,6 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "3.12"
 fastapi = "0.104.1"
-inventory = { path = "../inventory/dist/inventory-0.1.0.tar.gz", develop = false }
 uvicorn = {extras = ["standard"], version = "0.24.0.post1"}
 
 [tool.poetry.group.dev.dependencies]
@@ -17,6 +16,15 @@ mypy = "1.7.1"
 pytest = "7.4.3"
 ruff = "0.1.6"
 pre-commit = "^3.5.0"
+
+[tool.poetry.group.local-build.dependencies]
+inventory = { path = "../inventory/dist/inventory-0.1.0.tar.gz", develop = false } #local build
+
+
+[[tool.poetry.source]]
+name = "inventory"
+url = "https://gofile.me/7j8jT/EowQQYOeI"
+priority = "primary"
 
 [build-system]
 requires = ["poetry-core"]
