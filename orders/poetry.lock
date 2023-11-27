@@ -254,18 +254,13 @@ name = "inventory"
 version = "0.1.0"
 description = ""
 optional = false
-python-versions = ">=3.12,<3.13"
-files = [
-    {file = "inventory-0.1.0.tar.gz", hash = "sha256:4cbe09c583ffefe50ecb453ebd13cc8486b54da2877398de545d9ecc326fc155"},
-]
-
-[package.dependencies]
-fastapi = "0.104.1"
-uvicorn = {version = "0.24.0.post1", extras = ["standard"]}
+python-versions = "*"
+files = []
+develop = true
 
 [package.source]
-type = "file"
-url = "../inventory/dist/inventory-0.1.0.tar.gz"
+type = "directory"
+url = "../inventory"
 
 [[package]]
 name = "mypy"
@@ -978,4 +973,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "3.12"
-content-hash = "7732242c1d26cd2af430d1bcb6862c99b861637dabab790f0d3e6d8413e322a1"
+content-hash = "dd00e7471d11ea33d9cb129f64c3797da3844f6bd70402e049e6c76ada82b159"

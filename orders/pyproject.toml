@@ -7,6 +7,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "3.12"
+inventory = "0.1.0"
 fastapi = "0.104.1"
 uvicorn = {extras = ["standard"], version = "0.24.0.post1"}
 
@@ -18,7 +19,7 @@ ruff = "0.1.6"
 pre-commit = "^3.5.0"
 
 [tool.poetry.group.local-build.dependencies]
-inventory = { path = "../inventory/dist/inventory-0.1.0.tar.gz", develop = false } #local build
+#inventory = { path = "../inventory/dist/inventory-0.1.0.tar.gz", develop = false } #local build
 
 
 [[tool.poetry.source]]
