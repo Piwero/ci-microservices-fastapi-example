@@ -8,6 +8,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "3.12"
 fastapi = "0.104.1"
+inventory = { path = "../inventory/dist/inventory-0.1.0.tar.gz", develop = false }
 uvicorn = {extras = ["standard"], version = "0.24.0.post1"}
 
 [tool.poetry.group.dev.dependencies]
