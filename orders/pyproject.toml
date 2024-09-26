@@ -7,14 +7,21 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "3.12"
+inventory = "0.1.0"
 fastapi = "0.104.1"
 uvicorn = {extras = ["standard"], version = "0.24.0.post1"}
 
 [tool.poetry.group.dev.dependencies]
 black = "23.11.0"
 mypy = "1.7.1"
+pre-commit = "3.5.0"
 pytest = "7.4.3"
 ruff = "0.1.6"
+
+[[tool.poetry.source]]
+name = "inventory"
+url = "https://gofile.me/7j8jT/EowQQYOeI"
+priority = "primary"
 
 [build-system]
 requires = ["poetry-core"]
